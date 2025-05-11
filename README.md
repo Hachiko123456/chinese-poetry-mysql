@@ -1,44 +1,44 @@
-# Âè§ËØóËØçËá™Âä®ÂΩïÂÖ•Êï∞ÊçÆÂ∫ì(mysql)
+# π≈ ´¥ ◊‘∂Ø¬º»Î ˝æ›ø‚(mysql)
 
-## ËøêË°åÁéØÂ¢É
+## ‘À––ª∑æ≥
 
 python 3.11(pipenv)
 
-## config.json ËØ¥Êòé
+## config.json Àµ√˜
 
 ``` jsonc
 "mysql": {
-	"host": "127.0.0.1",				// ÊúçÂä°Âô®Âú∞ÂùÄ
-	"user": "root",					// Áî®Êà∑Âêç
-	"password": "123456",				// ÂØÜÁ†Å
-	"port": "3306",					// Á´ØÂè£
-	"database": "test",				// Êï∞ÊçÆÂ∫ìÂêçÂ≠ó
+	"host": "127.0.0.1",				// ∑˛ŒÒ∆˜µÿ÷∑
+	"user": "root",					// ”√ªß√˚
+	"password": "123456",				// √‹¬Î
+	"port": "3306",					// ∂Àø⁄
+	"database": "test",				//  ˝æ›ø‚√˚◊÷
 },
-"table": "chinese_poetry",				// ËØóËØçË°®Âêç !!!Ê≥®ÊÑè, Ëã•Ë°®ÂêçÂ∑≤Â≠òÂú®‰ºöÂà†Èô§ËØ•Ë°®, ËØ∑Ê≥®ÊÑèÂ§á‰ªΩ!
-"tableAuthor": "chinese_poetry_author",			// ‰ΩúËÄÖË°®Âêç !!!Ê≥®ÊÑè, Ëã•Ë°®ÂêçÂ∑≤Â≠òÂú®‰ºöÂà†Èô§ËØ•Ë°®, ËØ∑Ê≥®ÊÑèÂ§á‰ªΩ!
-"source": "/opt/chinese-poetry",			// Âè§ËØóËØçÊ†πÁõÆÂΩï
-"files": {						// ÂΩìËØóËØçË°®ÂêçÊàñ‰ΩúËÄÖË°®ÂêçÈïøÂ∫¶‰∏∫0Êó∂, Â§ÑÁêÜÂØπÂ∫îÁöÑÊñá‰ª∂
-	"data": [					// ÂΩïÂÖ•Êï∞ÊçÆÁöÑÂèÇÊï∞, ‰Ω†ÂèØ‰ª•Ê†πÊçÆÈúÄË¶Å‰øÆÊîπÊàñÂà†Èô§ÈÉ®ÂàÜÂÜÖÂÆπ
+"table": "chinese_poetry",				//  ´¥ ±Ì√˚ !!!◊¢“‚, »Ù±Ì√˚“—¥Ê‘⁄ª·…æ≥˝∏√±Ì, «Î◊¢“‚±∏∑›!
+"tableAuthor": "chinese_poetry_author",			// ◊˜’ﬂ±Ì√˚ !!!◊¢“‚, »Ù±Ì√˚“—¥Ê‘⁄ª·…æ≥˝∏√±Ì, «Î◊¢“‚±∏∑›!
+"source": "/opt/chinese-poetry",			// π≈ ´¥ ∏˘ƒø¬º
+"files": {						// µ± ´¥ ±Ì√˚ªÚ◊˜’ﬂ±Ì√˚≥§∂»Œ™0 ±, ¥¶¿Ì∂‘”¶µƒŒƒº˛
+	"data": [					// ¬º»Î ˝æ›µƒ≤Œ ˝, ƒ„ø…“‘∏˘æ›–Ë“™–ﬁ∏ƒªÚ…æ≥˝≤ø∑÷ƒ⁄»›
 		{
-			"path": "json/poet.tang.*.json",// ÊåáÂÆöÂåπÈÖçÁöÑÊñá‰ª∂(Unix Êñá‰ª∂ÂêçÊ®°ÂºèÂåπÈÖç)
-			"dynasty": "Âîê",		       // ÊåáÂÆöÊúù‰ª£
-			"collection": "ÂîêË©©",	      // ÊåáÂÆöÈõÜÂêà
-			"author": "ËÄÅÂ≠ê"		      // ÂèØÈÄâ, ÊâãÂä®ÊåáÂÆö‰ΩúËÄÖ
+			"path": "json/poet.tang.*.json",// ÷∏∂®∆•≈‰µƒŒƒº˛(Unix Œƒº˛√˚ƒ£ Ω∆•≈‰)
+			"dynasty": "Ã∆",		       // ÷∏∂®≥Ø¥˙
+			"collection": "Ã∆‘ä",	      // ÷∏∂®ºØ∫œ
+			"author": "¿œ◊”"		      // ø…—°,  ÷∂Ø÷∏∂®◊˜’ﬂ
 		}
 	],
-	"include": ["ÂîêË©©", "ÂÆãË©û"],		     // Âè™Â§ÑÁêÜÁâπÂÆöÁöÑcollection
-	"exclude": ["ÂπΩÂ§¢ÂΩ±"],			      // ‰∏çÂ§ÑÁêÜÁâπÂÆöÁöÑcollection, Ëã•include‰∏ç‰∏∫Á©∫, ÂàôÊ≠§È°πÊó†Êïà
-	"authors": ["ci/author.song.json"]		 // ÂåπÈÖç‰ΩúËÄÖÊñá‰ª∂(Unix Êñá‰ª∂ÂêçÊ®°ÂºèÂåπÈÖç)
+	"include": ["Ã∆‘ä", "ÀŒ‘~"],		     // ÷ª¥¶¿ÌÃÿ∂®µƒcollection
+	"exclude": ["”ƒâÙ”∞"],			      // ≤ª¥¶¿ÌÃÿ∂®µƒcollection, »Ùinclude≤ªŒ™ø’, ‘Ú¥ÀœÓŒﬁ–ß
+	"authors": ["ci/author.song.json"]		 // ∆•≈‰◊˜’ﬂŒƒº˛(Unix Œƒº˛√˚ƒ£ Ω∆•≈‰)
 }
 ```
 
-## ‰ΩøÁî®ÊñπÊ≥ï
+##  π”√∑Ω∑®
 
-> 1. ÂâçÂæÄ‰∏ãËΩΩ [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry.git)
+> 1. «∞Õ˘œ¬‘ÿ [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry.git)
 
-> 2. Â∞Ü `config.json.sample` Âè¶Â≠ò‰∏∫ `config.json` Âπ∂ÈÖçÁΩÆÂ•ΩÁõ∏ÂÖ≥ÂèÇÊï∞
+> 2. Ω´ `config.json.sample` ¡Ì¥ÊŒ™ `config.json` ≤¢≈‰÷√∫√œ‡πÿ≤Œ ˝
 
-> 3. ËøêË°å `start.py`
+> 3. ‘À–– `start.py`
 
 ``` shell
 git submodule update --init --recursive
