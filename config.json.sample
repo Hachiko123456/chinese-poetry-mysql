@@ -1,0 +1,103 @@
+{
+    "mysql": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password": "123456",
+        "port": "3306",
+        "database": "test"
+    },
+    "table": "chinese_poetry",
+    "tableAuthor": "chinese_poetry_author",
+    "source": "/opt/chinese-poetry",
+    "files": {
+        "data": [
+            {
+                "path": ["全唐诗/poet.tang.*.json", "全唐诗/唐诗三百首.json", "全唐诗/唐诗补录.json"],
+                "dynasty": "唐",
+                "collection": "唐詩"
+            },
+            {
+                "path": ["御定全唐詩/json/*.json"],
+                "dynasty": "唐",
+                "collection": "御定全唐詩"
+            },
+            {
+                "path": ["水墨唐诗/shuimotangshi.json"],
+                "dynasty": "唐",
+                "collection": "水墨唐詩"
+            },
+            {
+                "path": "全唐诗/poet.song.*.json",
+                "dynasty": "宋",
+                "collection": "宋詩"
+            },
+            {
+                "path": ["宋词/ci.song.*.json", "宋词/宋词三百首.json"],
+                "dynasty": "宋",
+                "collection": "宋詞"
+            },
+            {
+                "path": "五代诗词/huajianji/huajianji-*-juan.json",
+                "dynasty": "唐",
+                "collection": "花間集",
+                "author": "趙崇祚"
+            },
+            {
+                "path": "五代诗词/nantang/poetrys.json",
+                "dynasty": "唐",
+                "collection": "南唐二主詞"
+            },
+            {
+                "path": "元曲/*.json",
+                "dynasty": "元",
+                "collection": "元曲"
+            },
+            {
+                "path": "诗经/*.json",
+                "dynasty": "",
+                "collection": "詩經"
+            },
+            {
+                "path": "四书五经/*.json",
+                "dynasty": "",
+                "collection": "四書五經"
+            },
+            {
+                "path": "论语/*.json",
+                "dynasty": "戰國",
+                "collection": "論語"
+            },
+            {
+                "path": "youmengying/youmengying.json",
+                "dynasty": "清",
+                "collection": "幽夢影",
+                "author": "张潮"
+            },
+            {
+                "path": "纳兰性德/*.json",
+                "dynasty": "清",
+                "collection": "納蘭性德詩集",
+                "author": "納蘭性德"
+            },
+            {
+                "path": "蒙学/*.json",
+                "dynasty": "",
+                "collection": "蒙學"
+            },
+            {
+                "path": "曹操诗集/*.json",
+                "dynasty": "三國",
+                "collection": "曹操詩集",
+                "author": "曹操"
+            },
+            {
+                "path": "楚辞/*.json",
+                "dynasty": "戰國",
+                "collection": "楚辭"
+            }
+        ],
+        "include": [],
+        "exclude": [],
+        "authors": ["ci/author.song.json", "json/authors.*.json", "wudai/nantang/authors.json"]
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "mysql": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password": "123456",
+        "port": "3306",
+        "database": "chinese_poetry"
+    },
+    "table": "chinese_poetry",
+    "tableAuthor": "chinese_poetry_author",
+    "source": "C:/project/chinese-poetry",
+    "files": {
+        "data": [
+            {
+                "path": [
+                    "全唐诗/poet.tang.*.json",
+                    "全唐诗/唐诗三百首.json",
+                    "全唐诗/唐诗补录.json"
+                ],
+                "dynasty": "唐",
+                "collection": "TS"
+            },
+            {
+                "path": [
+                    "御定全唐詩/json/*.json"
+                ],
+                "dynasty": "唐",
+                "collection": "YDTS"
+            },
+            {
+                "path": [
+                    "水墨唐诗/shuimotangshi.json"
+                ],
+                "dynasty": "唐",
+                "collection": "SMTS"
+            },
+            {
+                "path": "全唐诗/poet.song.*.json",
+                "dynasty": "宋",
+                "collection": "SS"
+            },
+            {
+                "path": [
+                    "宋词/ci.song.*.json",
+                    "宋词/宋词三百首.json"
+                ],
+                "dynasty": "宋",
+                "collection": "SC"
+            },
+            {
+                "path": "五代诗词/huajianji/huajianji-*-juan.json",
+                "dynasty": "唐",
+                "collection": "HJJ",
+                "author": "赵崇祚"
+            },
+            {
+                "path": "五代诗词/nantang/poetrys.json",
+                "dynasty": "唐",
+                "collection": "NTEZC"
+            },
+            {
+                "path": "元曲/*.json",
+                "dynasty": "元",
+                "collection": "YQ"
+            },
+            {
+                "path": "诗经/*.json",
+                "dynasty": "",
+                "collection": "SJ"
+            },
+            {
+                "path": "四书五经/*.json",
+                "dynasty": "",
+                "collection": "SSWJ"
+            },
+            {
+                "path": "论语/*.json",
+                "dynasty": "战国",
+                "collection": "LY"
+            },
+            {
+                "path": "幽梦影/youmengying.json",
+                "dynasty": "清",
+                "collection": "YMY",
+                "author": "张潮"
+            },
+            {
+                "path": "纳兰性德/*.json",
+                "dynasty": "清",
+                "collection": "NLXD",
+                "author": "纳兰性德"
+            },
+            {
+                "path": "蒙学/*.json",
+                "dynasty": "",
+                "collection": "MX"
+            },
+            {
+                "path": "曹操诗集/*.json",
+                "dynasty": "三国",
+                "collection": "CCSJ",
+                "author": "曹操"
+            },
+            {
+                "path": "楚辞/*.json",
+                "dynasty": "战国",
+                "collection": "CC"
+            }
+        ],
+        "include": [],
+        "exclude": [],
+        "authors": [
+            "全唐诗/authors.*.json",
+            "宋词/author.song.json",
+            "五代诗词/nantang/authors.json"
+        ]
+    }
+}
