@@ -30,6 +30,10 @@ def start():
     connect = cast(MySQLConnection, mysql.connector.connect(**config["mysql"]))
     cursor = connect.cursor()
     cursor.execute("SET names 'utf8mb4'")
+    # 创建数据库
+    cursor.execute("""CREATE DATABASE IF NOT EXISTS `chinese_poetry` 
+  CHARACTER SET utf8mb4 
+  COLLATE utf8mb4_unicode_ci;""")
 
     # 删除旧表, 创建新表
     # 诗词表
