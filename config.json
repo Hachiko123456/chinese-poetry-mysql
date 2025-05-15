@@ -14,11 +14,17 @@
             {
                 "path": [
                     "全唐诗/poet.tang.*.json",
-                    "全唐诗/唐诗三百首.json",
                     "全唐诗/唐诗补录.json"
                 ],
                 "dynasty": "唐",
                 "collection": "TS"
+            },
+             {
+                "path": [
+                    "全唐诗/唐诗三百首.json"
+                ],
+                "dynasty": "唐",
+                "collection": "TSB"
             },
             {
                 "path": [
