@@ -1,14 +1,14 @@
 {
     "mysql": {
         "host": "127.0.0.1",
-        "user": "root",
-        "password": "123456",
+        "user": "mengyao-poetry",
+        "password": "mengyao-poetry",
         "port": "3306",
         "database": "chinese_poetry"
     },
     "table": "chinese_poetry",
     "tableAuthor": "chinese_poetry_author",
-    "source": "C:/project/chinese-poetry",
+    "source": "../chinese-poetry",
     "files": {
         "data": [
             {
