@@ -61,6 +61,7 @@ def importData(connect: MySQLConnection, source: str, table: str, info: dict):
                 data = [data]
             for poet in data:
                 values = []
+                content_is_valid = True
                 for field in fields:
                     if fields[field]["type"] == "string":
                         value = poet.get(field, "")
@@ -77,7 +78,11 @@ def importData(connect: MySQLConnection, source: str, table: str, info: dict):
                     elif field == "content":
                         value = poet.get(field, None)
                         if not value:
-                            value = poet.get('paragraphs', '')
+                            value = poet.get('paragraphs', None)
+                        if not value:
+                            value = poet.get('para', None)
+                        if not value:
+                            content_is_valid = False
                         values.append(json.dumps(value, ensure_ascii=False))
                     else:
                         value = poet.get(field, None)
@@ -92,6 +97,9 @@ def importData(connect: MySQLConnection, source: str, table: str, info: dict):
                         elif field == 'author_id':
                             value = -1
                         values.append(json.dumps(value, ensure_ascii=False))
+                if not content_is_valid:
+                    print('内容为空，忽略......')
+                    continue
                 # 处理 null 字符串
                 processed_values = [
                     None if isinstance(v, str) and v.strip().lower() in {'null', '[null]'} else v
@@ -121,10 +129,10 @@ def importData(connect: MySQLConnection, source: str, table: str, info: dict):
 
 # 录入作者
 def importAuthors(
-    connect: MySQLConnection,
-    source: str,
-    table: str,
-    paths: list[str],
+        connect: MySQLConnection,
+        source: str,
+        table: str,
+        paths: list[str],
 ):
     names = ()
     for path in paths:

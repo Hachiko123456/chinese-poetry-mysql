@@ -5,8 +5,10 @@ import mysql.connector
 from colorama import Fore
 from mysql.connector import MySQLConnection
 
+import constants
 from console_py import console
 from db import importAuthors, importData
+from constants import *
 
 console = console.Console()
 
@@ -101,10 +103,19 @@ def start():
         if isinstance(res["count"], int):
             total += res["count"]
 
-    print('开始匹配作者信息')
+    console.log('开始匹配作者信息')
     update_author_sql = """update chinese_poetry p set author_id = (select id from chinese_poetry_author pa where pa.name=p.author limit 1)"""
     cursor.execute(update_author_sql)
-    print('匹配作者信息成功')
+    console.log('匹配作者信息成功')
+
+    console.log('开始初始化其他表信息')
+    cursor.execute(constants.Sql.create_favorite_sql)
+    cursor.execute(constants.Sql.create_poetry_access_history_sql)
+    cursor.execute(constants.Sql.create_poetry_type_sql)
+    cursor.execute(constants.Sql.import_poetry_type_sql)
+    cursor.execute(constants.Sql.create_social_auth_sql)
+    cursor.execute(constants.Sql.create_user_info_sql)
+    console.log('初始化其他表信息成功')
 
     cursor.close()
 
